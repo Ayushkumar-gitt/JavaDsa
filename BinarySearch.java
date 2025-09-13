@@ -1,17 +1,84 @@
 public class BinarySearch {
     public static void main(String[] args) {
-        int arr[] = {2,3,5,9,14,16,17,18};
+        int arr[] = {2,3,5,9,14,17,18};
         char charr[] = {'c','f','s','y'};
         char chtarget = 'h';
-        int target = 6;
+        int target = 5;
         // System.out.println(binarySearch(arr, target));
+
+        // int arrn[] = new int[2];         // SearchRangeQuestion
+        // arrn = searchRange(arr, target);
+        // for (int i = 0; i < arrn.length; i++) {
+        //     System.out.print(arrn[i]);
+        // }
+
         // System.out.println(ceilingofaNum(arr, target));
         // System.out.println(floorofaNum(arr, target));
-        System.out.println(smallestGreaterLetter744(charr, chtarget));
+        // System.out.println(smallestGreaterLetter744(charr, chtarget));
+
+        System.out.println(ans(arr, target));
+    }
+
+    public static int ans(int[] arr,int target){
+        int start = 0;
+        int end = 1;
+
+        while (target>arr[end]) {
+            int newstart = end+1;
+            end = end + (end-start+1)*2;
+            start = newstart;
+        }
+        return binarySearchinfi(arr, target, start, end);
+    }
+    public static int[] searchRange(int[] nums, int target) {
+        int arr[] = {-1,-1};
+        arr[0] = search(nums, target, true);
+        if (arr[0]!=-1) {
+            arr[1] = search(nums, target, false);
+        }
+        return arr;
+
+    }
+    static int search(int[] nums,int target ,boolean findStartIndex){
+        int ans = -1;
+        int start = 0;
+        int end = nums.length-1;
+
+        while (start<=end) {
+            int mid = (start+end)/2;
+            if (target<nums[mid]) {
+                end = mid-1;
+            }else if (target>nums[mid]) {
+                start = mid+1;
+            }else{
+                ans = mid;
+                if (findStartIndex) {
+                    end = mid-1;
+                }else{
+                    start = mid+1;
+                }
+            }
+            
+        }
+        return ans;
     }
     public static int binarySearch(int arr[],int target){
         int start = 0;
         int end = arr.length-1;
+        while (start<=end) {
+            int mid = (start+end)/2;
+            if (target<arr[mid]) {
+                end = mid-1;
+            }else if (target>arr[mid]) {
+                start = mid+1;
+            }else{
+                return mid;
+            }
+            
+        }
+        return -1;
+    }
+    public static int binarySearchinfi(int arr[],int target,int start,int end){
         while (start<=end) {
             int mid = (start+end)/2;
             if (target<arr[mid]) {
