@@ -1,6 +1,7 @@
 public class BinarySearch {
     public static void main(String[] args) {
-        int arr[] = {2,3,5,9,14,17,18};
+        int arr[] = {24,69,100,99,79,78,67,36,26,19};
+
         char charr[] = {'c','f','s','y'};
         char chtarget = 'h';
         int target = 5;
@@ -14,11 +15,42 @@ public class BinarySearch {
 
         // System.out.println(ceilingofaNum(arr, target));
         // System.out.println(floorofaNum(arr, target));
-        // System.out.println(smallestGreaterLetter744(charr, chtarget));
-
-        System.out.println(ans(arr, target));
+//        System.out.println(smallestGreaterLetter744(charr, chtarget));
+        System.out.println(mountainPeakUnoptimised(arr));
+        // System.out.println(ans(arr, target));
     }
-
+    public static int mountainPeakUnoptimised(int[] arr){
+        int start  = 0;
+        int end = arr.length-1;
+        int mid = (start+end)/2;
+        while(start<=mid){
+            if(arr[mid]<arr[mid+1]){
+                start = mid;
+                mid = mid+1;
+            }else if (arr[mid]<arr[mid-1]){
+                end = mid;
+                mid = mid-1;
+            }
+            else{
+                return mid;
+            }
+        }
+        return -1;
+    }
+    public static int mountainPeakOptimised(int[] arr){
+        int start = 0;
+        int end=  arr.length-1;
+        while(start<end){
+            int mid = (start+end)/2;
+            if (arr[mid]<arr[mid+1]){
+                start = mid+1;
+            }
+            else{
+                end = mid;
+            }
+        }
+        return start;
+    }
     public static int ans(int[] arr,int target){
         int start = 0;
         int end = 1;
@@ -30,6 +62,7 @@ public class BinarySearch {
         }
         return binarySearchinfi(arr, target, start, end);
     }
+    //first and last pos
     public static int[] searchRange(int[] nums, int target) {
         int arr[] = {-1,-1};
         arr[0] = search(nums, target, true);
@@ -125,12 +158,13 @@ public class BinarySearch {
             }
             else if (target>arr[mid]) {
                 start = mid+1;
-            }
+            }   
             else{
                 return mid;
             }
         }
-        return arr[end]; // we can do (start+end)/2 also on the place of end , because end and middle are currently on same place but its good to use end as its told in tutorial.. 
+        return end; // HERE WE ARE RETURNING INDEX NOT THE VALUE 
+        // we can do (start+end)/2 also on the place of end , because end and middle are currently on same place but its good to use end as its told in tutorial.. 
     }
 
     public static char smallestGreaterLetter744(char letters[],char target){
