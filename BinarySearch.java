@@ -1,11 +1,11 @@
 public class BinarySearch {
     public static void main(String[] args) {
         int arr[] = {24,69,100,99,79,78,67,36,26,19};
-
+        int arr2[] = {1,2,3,4,5,3,1};
         char charr[] = {'c','f','s','y'};
         char chtarget = 'h';
         int target = 5;
-        // System.out.println(binarySearch(arr, target));
+        System.out.println(binarySearch(arr2, target));
 
         // int arrn[] = new int[2];         // SearchRangeQuestion
         // arrn = searchRange(arr, target);
@@ -16,7 +16,7 @@ public class BinarySearch {
         // System.out.println(ceilingofaNum(arr, target));
         // System.out.println(floorofaNum(arr, target));
 //        System.out.println(smallestGreaterLetter744(charr, chtarget));
-        System.out.println(mountainPeakUnoptimised(arr));
+        // System.out.println(mountainPeakUnoptimised(arr));
         // System.out.println(ans(arr, target));
     }
     public static int mountainPeakUnoptimised(int[] arr){
@@ -43,10 +43,13 @@ public class BinarySearch {
         while(start<end){
             int mid = (start+end)/2;
             if (arr[mid]<arr[mid+1]){
-                start = mid+1;
+                start = mid+1; // You are in accesnding part of array
+            }
+            else if(arr[mid]>arr[mid+1]){
+                end = mid; // You are in descending part of the array
             }
             else{
-                end = mid;
+                return mid; // Return mid because if mid+1 is not greater than mid AND mid-1 is also not greater than mid, then mid is the greatest element hence Mid is the answer
             }
         }
         return start;
@@ -98,7 +101,7 @@ public class BinarySearch {
     public static int binarySearch(int arr[],int target){
         int start = 0;
         int end = arr.length-1;
-        while (start<=end) {
+        while (start<end) {
             int mid = (start+end)/2;
             if (target<arr[mid]) {
                 end = mid-1;
@@ -107,7 +110,6 @@ public class BinarySearch {
             }else{
                 return mid;
             }
-            
         }
         return -1;
     }
