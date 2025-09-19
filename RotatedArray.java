@@ -27,4 +27,5 @@ public class RotatedArray {
         int end = arr.length-1;
         System.out.println(rotatedSearch(arr, target, start, end));
     }
+    
 }
