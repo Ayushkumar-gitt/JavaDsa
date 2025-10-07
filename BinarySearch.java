@@ -127,7 +127,7 @@ public class BinarySearch {
         }
         return -1;
     }
-    
+
     public static int ceilingofaNum(int arr[],int target){
         if (target>arr[arr.length-1]) {
             return -1;
@@ -148,6 +148,7 @@ public class BinarySearch {
         }
         return arr[start];
     }
+    
     public static int floorofaNum(int arr[],int target){
         // if (target<arr[0]) {
         //     return -1;
