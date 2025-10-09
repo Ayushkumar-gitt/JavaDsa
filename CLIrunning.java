@@ -6,6 +6,7 @@ public class CLIrunning {
         System.out.println("Int: "+a);
         System.out.println("Int: "+b);
         System.out.println("Int: "+c);
+        System.out.println();
 
         // DiceRolls.java
 
