@@ -10,10 +10,10 @@ public class CLIrunning {
 
         // DiceRolls.java
 
-        // System.out.println("Rolling a fair dice 6 times:");
-        // for (int i = 1; i <= 6; i++) {
-        //     int roll = (int)(Math.random() * 6) + 1; // 1..6
-        //     System.out.println("Roll " + i + ": " + roll);
-        // }
+        System.out.println("Rolling a fair dice 6 times:");
+        for (int i = 1; i <= 6; i++) {
+            int roll = (int)(Math.random() * 6) + 1; // 1..6
+            System.out.println("Roll " + i + ": " + roll);
+        }
     }
 }
