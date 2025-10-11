@@ -10,6 +10,7 @@ public class Array2D {
         System.out.println(Arrays.toString(search2D(arr, target)));
     }
 
+    
     public static int[] search2D(int arr[][], int target) {
         int row = 0;
         int col = arr.length - 1;
