@@ -6,6 +6,7 @@ public class PatternCool {
                 System.out.print((flag)? "0" : "1");
                 flag = !flag;
             }
+            
             System.out.println();
         }
     }
