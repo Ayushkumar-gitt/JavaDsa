@@ -10,7 +10,6 @@ public class CyclicSort {
                 int temp = arr[i];
                 arr[i] = arr[idx];
                 arr[idx] = temp;
-
             }
             if (arr[i]==i+1){
                 i++;
