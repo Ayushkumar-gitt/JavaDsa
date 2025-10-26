@@ -13,6 +13,7 @@ public class CyclicSortTesting {
                 i++;
             }
         }
+        
         int ans = arr.length;
         for (int j = 0; j < arr.length; j++) {
             if (arr[j]!=j){
