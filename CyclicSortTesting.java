@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class CyclicSortTesting {
     public static int cyclicSort(int arr[]){
         int i = 0;
