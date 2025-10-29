@@ -37,6 +37,7 @@ public class BinarySearch {
         }
         return -1;
     }
+    
     public static int mountainPeakOptimised(int[] arr){
         int start = 0;
         int end=  arr.length-1;
