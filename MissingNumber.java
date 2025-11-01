@@ -1,4 +1,6 @@
-public class CyclicSortTesting {
+import java.util.Arrays;
+
+public class MissingNumber {
     public static int cyclicSort(int arr[]){
         int i = 0;
         while (i <=arr.length-1){
@@ -11,7 +13,7 @@ public class CyclicSortTesting {
                 i++;
             }
         }
-        
+        System.out.println(Arrays.toString(arr));
         int ans = arr.length;
         for (int j = 0; j < arr.length; j++) {
             if (arr[j]!=j){
@@ -22,7 +24,7 @@ public class CyclicSortTesting {
         return arr.length;
     }
     public static void main(String[] args) {
-        int arr[] = {9,6,4,2,3,5,7,8,1};
+        int arr[] = {0,1};
 
         System.out.println("Missing element : "+ cyclicSort(arr));
     }
