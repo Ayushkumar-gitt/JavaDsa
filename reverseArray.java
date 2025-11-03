@@ -5,4 +5,5 @@ public class reverseArray {
             System.out.print(i +" ");
         }
     }
+    
 }
