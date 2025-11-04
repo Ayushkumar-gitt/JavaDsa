@@ -9,6 +9,7 @@ public class secondLargestArr {
             firstLargest = arr[i];
             }
         }
+        
         System.out.println(secondLargest);
     }
 }
