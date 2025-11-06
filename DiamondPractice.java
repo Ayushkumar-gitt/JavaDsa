@@ -26,6 +26,5 @@ public class DiamondPractice {
             }
             System.out.println();
         }
-        
     }
 }
