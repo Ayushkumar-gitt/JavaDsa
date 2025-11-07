@@ -14,6 +14,7 @@ public class DiamondPractice {
             }
             System.out.println();
         }
+        
         // second half
         for(int i = size;i>=0;i--){
             // spaces
