@@ -3,6 +3,7 @@ public class leetsqrt {
         int start = 1;
         int end = x;
         int ans = 0;
+        
         if (x==0||x==1) {
             return x;
         }
