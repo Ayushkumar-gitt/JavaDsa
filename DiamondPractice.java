@@ -3,7 +3,7 @@ public class DiamondPractice {
         diamondPr(4);
     }
     public static void diamondPr(int size){
-        for(int i = 1;i<=size;i++){
+        for(int i = 1;i<=size-1;i++){ // Extra minus 1 at size cause double middle line was comming
             // spaces
             for(int j = 1;j<=size-i;j++){
                 System.out.print(" ");
@@ -16,7 +16,7 @@ public class DiamondPractice {
         }
         
         // second half
-        for(int i = size;i>=0;i--){
+        for(int i = size;i>0;i--){
             // spaces
             for(int j = 1;j<=size-i;j++){
                 System.out.print(" ");
