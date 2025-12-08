@@ -2,7 +2,10 @@ public class Recursion {
     public static void main(String[] args) {
         // print(1);
         // fibonacci(0, 1);
-        System.out.println(fibo(4));
+        // System.out.println(fibo(4));
+        int n =8;
+        power(n);
+        
     }
     public static void print(int n) {
         if (n==6) {
@@ -26,5 +29,10 @@ public class Recursion {
             return n;
         }
         return fibo(n-1) + fibo(n-2);
+    }
+    public static void power(int n) {
+        Double ans = Math.sqrt(n); // Think again , May be thinking with wrong approach.
+        Boolean val = ans%1==0;
+        System.out.println(val);
     }
 }
