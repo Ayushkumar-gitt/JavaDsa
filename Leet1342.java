@@ -3,6 +3,7 @@ public class Leet1342 {
         System.out.println(numberOfSteps(8));
     }
 
+    
     public static int numberOfSteps(int num) {
         if (num == 0) {
             return 0;
