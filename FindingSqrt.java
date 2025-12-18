@@ -23,6 +23,7 @@ public class FindingSqrt {
         }
         return ans;
     }
+    
     public static boolean isPerfectSquare(int n) {
         if (n == 0 || n == 1) return true;
         long start = 0;
