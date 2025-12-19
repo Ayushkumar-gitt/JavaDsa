@@ -11,11 +11,11 @@ public class FindingSqrt {
         while (start<end) {
             int mid = (start + end)/2;
             if (mid*mid>n) {
-                ans = mid; // storing the last ans
+                ans = mid;    // storing the last ans
                 end = mid;
             }
             else if (mid*mid<n) {
-                ans = mid; // storing the last ans
+                ans = mid;   // storing the last ans
                 start = mid+1;
             }else{
                 return mid;
