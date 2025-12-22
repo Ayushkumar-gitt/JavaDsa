@@ -1,10 +1,10 @@
-public class Recursion {
+public class RecursionIntro {
     public static void main(String[] args) {
         // print(1);
         // fibonacci(0, 1);
-        // System.out.println(fibo(4));
-        int n =8;
-        power(n);
+        System.out.println(fibo(4));
+        // int n =8;
+        // power(n);
     }
     public static void print(int n) {
         if (n==6) {
