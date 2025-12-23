@@ -1,9 +1,8 @@
 public class Leet1342 {
     public static void main(String[] args) {
-        System.out.println(numberOfSteps(8));
+        System.out.println(numberOfSteps(14));
     }
 
-    
     public static int numberOfSteps(int num) {
         if (num == 0) {
             return 0;
