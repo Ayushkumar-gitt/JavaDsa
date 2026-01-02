@@ -28,7 +28,6 @@ public class RecursionArray {
         if (arr[i] == target) {
             return i;
         }
-
         return linearSearch(arr, target, i + 1);
 
     }
