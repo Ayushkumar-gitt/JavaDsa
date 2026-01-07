@@ -51,6 +51,7 @@ public class RecursionArray {
         if (target == arr[index]) { // tjos answer will remain in that function call only.
             list.add(index);
         }
+        
         // storing the answer of each funciton call and adding them in list when
         // backtracking;
         ArrayList<Integer> valueFrombelowCall = findAllIndex2(arr, target, index + 1);
