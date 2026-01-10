@@ -2,8 +2,9 @@ import java.util.Arrays;
 
 public class Leetcode169 {
     public static void main(String[] args) {
-        int nums[] = {1}; // 
-        System.out.println(majorityElement(nums));
+        int nums[] = {1,2,3}; // 
+        // System.out.println(majorityElement(nums));
+        System.out.println(containsDuplicate(nums));
     }
 
     public static int majorityElement(int[] nums) { // Self designed solution.
@@ -36,5 +37,15 @@ public class Leetcode169 {
             count += (num == candidate) ? 1 : -1;
         }
         return candidate;
+    }
+
+    public static boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length-1; i++) {
+            if (nums[i] == nums[i+1]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
