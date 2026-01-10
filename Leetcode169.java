@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class Leetcode169 {
     public static void main(String[] args) {
-        int nums[] = {1,2,3}; // 
-        // System.out.println(majorityElement(nums));
-        System.out.println(containsDuplicate(nums));
+        int nums[] = {2,2,1,1,1,2,2}; // 
+        System.out.println(majorityElement(nums));
+        // System.out.println(containsDuplicate(nums));
     }
 
     public static int majorityElement(int[] nums) { // Self designed solution.
