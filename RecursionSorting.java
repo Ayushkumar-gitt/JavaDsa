@@ -5,8 +5,10 @@ public class RecursionSorting {
         int arr[] = { 4, 3, 2, 8, 1 };
         // selectionSort(arr, 0, 0,arr.length-1);
         // bubbleSort(arr, 0, arr.length - 1);
-        int ans[] = mergeSort(arr);
-        for (int num : ans) {
+        // int ans[] = mergeSort(arr);
+        mergeSortInplace(arr, 0, arr.length-1);
+
+        for (int num : arr) {
             System.out.print(num + " ");
         }
     }
@@ -89,5 +91,46 @@ public class RecursionSorting {
             k++;
         }
         return mix;
+    }
+
+    public static void mergeSortInplace(int arr[],int si , int ei){
+        if (si>=ei) {
+            return;
+        }
+        int mid = (si+ei)/2;
+        mergeSortInplace(arr, si, mid);
+        mergeSortInplace(arr, mid+1, ei);
+        mergeInplace(arr,si,mid,ei);
+    }
+
+    private static void mergeInplace(int[] arr, int si, int mid, int ei) {
+        int merged[] =  new int[ei-si+1];
+        int i0 = si;
+        int i1 = mid+1;
+        int i2 = 0;
+        while (i0<=mid && i1<=ei) {
+            if (arr[i0]<=arr[i1]) {
+                merged[i2] = arr[i0];
+                i2++;
+                i0++;
+            }else{
+                merged[i2] = arr[i1];
+                i2++;
+                i1++;
+            }
+        }
+        while (i0<=mid) {
+            merged[i2] = arr[i0];
+                i2++;
+                i0++;
+        }
+        while (i1<=ei) {
+            merged[i2] = arr[i1];
+                i2++;
+                i1++;
+        }
+        for (int i = 0,j = si; i < merged.length; i++,j++) {
+            arr[j] = merged[i];
+        }
     }
 }
