@@ -1,6 +1,6 @@
 public class Leetcode3099 {
     public static void main(String[] args) {
-        System.out.println(sumOfTheDigitsOfHarshadNumber(23));
+        System.out.println(sumOfTheDigitsOfHarshadNumber(18));
     }
     public static int sumOfTheDigitsOfHarshadNumber(int x) {
         int originalx = x;
