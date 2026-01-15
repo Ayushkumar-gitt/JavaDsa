@@ -93,6 +93,7 @@ public class RecursionSorting {
         return mix;
     }
 
+    // Taught by apna college
     public static void mergeSortInplace(int arr[],int si , int ei){
         if (si>=ei) {
             return;
