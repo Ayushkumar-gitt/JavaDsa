@@ -41,6 +41,7 @@ public class RecursionArray {
         return findAllIndex(arr, target, index + 1, list);
     }
 
+    
     public static ArrayList<Integer> findAllIndex2(int[] arr, int target, int index) {
         ArrayList<Integer> list = new ArrayList<>();
 
