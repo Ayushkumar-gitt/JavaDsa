@@ -1,27 +1,25 @@
 public class TwoSum {
-    public static int[] twoSum(int[] numbers, int target) {
-        int start = 0;
-        int end = numbers.length-1;
-        while (start<end) {
-            int sum = numbers[start]+numbers[end];
-            if (sum==target) {
-                return new int[]{start+1,end+1};
-            }else if(sum>target){
-                end--;
-            }else{
-                start++;
+    public static void main(String[] args) {
+        int[] arr = {2,5,5,11};
+        int[] ans = twoSum(arr, 10);
+        for (int i : ans) {
+            System.out.println(i);
+        }
+    }
+    public static int[] twoSum(int[] nums, int target) {
+        int[] ans = new int[2];
+        int val1 = -1; int val2 = -1;int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            val1 = nums[i];
+            for (int j = i+1; j < nums.length; j++) {
+                val2 = nums[j];
+                if (val1 + val2==target) {
+                    ans[0] = i;
+                    ans[1] = j;
+                    return ans;
+                }
             }
         }
-        return null;
-    }
-    public static void main(String[] args) {
-        int arr[] = {2,3,4};
-        int target = 6;
-        int arr2[] = twoSum(arr, target);
-
-
-        for(int i = 0;i<=arr2.length-1;i++){
-            System.out.println(arr2[i]);
-        }
+        return ans;
     }
 }
