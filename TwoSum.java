@@ -1,7 +1,7 @@
 public class TwoSum {
     public static void main(String[] args) {
         int[] arr = { 2, 5, 5, 11 };
-        int[] ans = twoSum(arr, 10);
+        int[] ans = twoSum(arr, 16);
         for (int i : ans) {
             System.out.println(i);
         }
