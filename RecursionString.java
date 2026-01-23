@@ -1,9 +1,11 @@
 public class RecursionString {
     public static void main(String[] args) {
-        String s = "zzzzzzzzzzzzzzzzzzzzzzz";
+        String s = "ayushapplayushraj";
         String ans = "";
-        // System.out.println(charRemoving(s, ans, 0));
-        System.out.println(makeFancyString(s));
+        System.out.println(charRemoving(s, ans, 0));
+        System.out.println(appleRemoving(s, ans, 0));
+        System.out.println(skipAppnotApple(s));
+        // System.out.println(makeFancyString(s));
     }
     public static String charRemoving(String original , String ans , int i) {
         if (i==original.length()) {
@@ -15,6 +17,29 @@ public class RecursionString {
             return charRemoving(original , ans+original.charAt(i), i+1);
         }
     }
+
+   public static String appleRemoving(String original, String ans, int i) {
+    if (i == original.length()) {
+        return ans;
+    }
+
+    if (i + 5 <= original.length() && original.startsWith("apple", i)) {
+        return appleRemoving(original, ans, i + 5);
+    } else {
+        return appleRemoving(original, ans + original.charAt(i), i + 1);
+    }
+}
+    public static String skipAppnotApple(String original){
+        if (original.isEmpty()) {
+            return "";
+        }
+        if (!original.startsWith("apple") && original.startsWith("app")) {
+            return skipAppnotApple(original.substring(3));
+        }else{
+            return original.charAt(0) + skipAppnotApple(original.substring(1));
+        }
+    }
+    
     public static String makeFancyString(String s) { // leet 1957 // Fails in leetcode due to using string instead use String builder to optimize the code to get better time complexity for leetcode submission. See own leetcode summision of this question for optimized answer.
         
         String ans = "";
