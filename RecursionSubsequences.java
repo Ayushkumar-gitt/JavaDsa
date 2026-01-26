@@ -40,7 +40,6 @@ public class RecursionSubsequences {
             }
             j++;
         }
-
         return i == s.length();
     }
     public static int numMatchingSubseq(String s, String[] words) {
