@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class RecursionSubsequences {
     public static void main(String[] args) {
         // subsequences("", "abc");
-        // System.out.println(subsequencesList("", "ahbgdc"));
+        System.out.println(subsequencesList("", "abc"));
         System.out.println(isSubsequence("axc", "abcde"));
         String[] words = {"a","bb","acd","ace"};
         numMatchingSubseq("abcde",words );
