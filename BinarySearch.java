@@ -2,23 +2,27 @@ public class BinarySearch {
     public static void main(String[] args) {
         int arr[] = {24,69,100,99,79,78,67,36,26,19};
         int arr2[] = {1,2,3,4,5,3,1};
-        char charr[] = {'c','f','s','y'};
-        char chtarget = 'h';
+        char charr[] = {'x','x','y','y'};
+        char chtarget = 'z';
         int target = 5;
-        System.out.println(binarySearch(arr2, target));
+        // System.out.println(binarySearch(arr2, target));
 
         // int arrn[] = new int[2];         // SearchRangeQuestion
-        // arrn = searchRange(arr, target);
+        // int[] arrn = searchRange(arr, target);
         // for (int i = 0; i < arrn.length; i++) {
         //     System.out.print(arrn[i]);
         // }
 
         // System.out.println(ceilingofaNum(arr, target));
         // System.out.println(floorofaNum(arr, target));
-//        System.out.println(smallestGreaterLetter744(charr, chtarget));
+    //    System.out.println(smallestGreaterLetter744(charr, chtarget));
         // System.out.println(mountainPeakUnoptimised(arr));
         // System.out.println(ans(arr, target));
     }
+
+    //  public int findInMountainArray(int target, MountainArray mountainArr) {
+        
+    // }
     public static int mountainPeakUnoptimised(int[] arr){
         int start  = 0;
         int end = arr.length-1;
@@ -56,7 +60,7 @@ public class BinarySearch {
         return start;
     }
     
-    public static int ans(int[] arr,int target){
+    public static int infiniteArrayBS(int[] arr,int target){
         int start = 0;
         int end = 1;
 
@@ -67,7 +71,7 @@ public class BinarySearch {
         }
         return binarySearchinfi(arr, target, start, end);
     }
-    //first and last pos
+    //first and last pos - leetcode 34
     public static int[] searchRange(int[] nums, int target) {
         int arr[] = {-1,-1};
         arr[0] = search(nums, target, true);
@@ -186,6 +190,6 @@ public class BinarySearch {
             }
             
         }
-        return letters[start%letters.length];
+        return letters[start%letters.length];   
     }
 }
