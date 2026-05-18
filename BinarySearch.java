@@ -5,7 +5,7 @@ public class BinarySearch {
         char charr[] = {'x','x','y','y'};
         char chtarget = 'z';
         int target = 5;
-        // System.out.println(binarySearch(arr2, target));
+        System.out.println(binarySearch(arr2, target));
 
         // int arrn[] = new int[2];         // SearchRangeQuestion
         // int[] arrn = searchRange(arr, target);
@@ -107,7 +107,7 @@ public class BinarySearch {
     public static int binarySearch(int arr[],int target){
         int start = 0;
         int end = arr.length-1;
-        while (start<end) {
+        while (start<=end) {
             int mid = (start+end)/2;
             if (target<arr[mid]) {
                 end = mid-1;
