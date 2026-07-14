@@ -17,10 +17,8 @@ public class patterns1 {
         // butterfly_a();
         // lakshayQues();
         // diamond();
-        // crossbox();
-        anonNum();
-
-
+        crossbox();
+        // anonNum();
     }
 
     public static void solidRectangle() {
@@ -153,12 +151,12 @@ public class patterns1 {
 
     public static void rhombus() {
         int n = 5;
-        int space = 4;
+        // int space = 4;
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= space; j++) {
+            for (int j = 1; j <= n - i; j++) {
                 System.out.print(' ');
             }
-            space--;
+            // space--;
 
             for (int j = 1; j <= n; j++) {
                 System.out.print('*');
@@ -182,55 +180,56 @@ public class patterns1 {
         }
     }
 
-    public static void palindromicNumberPyramid(){
+    public static void palindromicNumberPyramid() {
         int n = 5;
-        int space = 4;
-        int num = 1;
-        for(int i = 1;i<=n;i++){
-            for(int j = 1;j<=space;j++){
+        // int space = 4;
+        // int num = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            space--;
+            // space--;
             // for(int j = 1;j<=i;j++){
-            //     System.out.print(num);
+            // System.out.print(num);
             // }
-            for(int j = num;j>=1;j--){
+            for (int j = i; j >= 1; j--) {
                 System.out.print(j);
             }
-            num++;
-            for(int j = 2;j<=i;j++){
+            // num++;
+            for (int j = 2; j <= i; j++) {
                 System.out.print(j);
             }
             System.out.println();
-
 
         }
     }
 
-    public static void butterfly(){
-        int n = 5; int space = 8; int s = 0;
-        for(int i = 1;i<=n;i++){
-            for(int j = 1;j<=i;j++){
+    public static void butterfly() {
+        int n = 5;
+        int space = 8;
+        int s = 0;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print('*');
             }
-            for(int j = space;j>=1;j--){
+            for (int j = space; j >= 1; j--) {
                 System.out.print(" ");
             }
-            for(int j = 1;j<=i;j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print('*');
             }
-            space = space-2;
+            space = space - 2;
             System.out.println();
         }
-        for(int i = n;i>=1;i--){
-            for(int j = 1;j<=i;j++){
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
-            for(int j = 0;j<s;j++){
+            for (int j = 0; j < s; j++) {
                 System.out.print(" ");
             }
-            s = s+2;
-            for(int j = 1;j<=i;j++){
+            s = s + 2;
+            for (int j = 1; j <= i; j++) {
                 System.out.print('*');
             }
             // System.out.print("*");
@@ -238,84 +237,86 @@ public class patterns1 {
         }
     }
 
-    public static void lakshayQues(){
+    public static void lakshayQues() {
         int n = 7;
-        for(int i = 1;i<=n;i++){
-            for(int j = 1;j<=5;j++){
-                if (i==1|| i==n|| i ==4) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 5; j++) {
+                if (i == 1 || i == n || i == 4) {
                     System.out.print("*");
                 }
             }
             System.out.println();
         }
     }
-    public static void butterfly_a(){
-        int n = 4; int space = 0;
-        for(int i = 1;i<=n;i++){
-            for(int j = 1;j<=i;j++){
-                System.out.print('*');
-            }
-            int spacee = 2* (n-i);
-            for(int j = 1;j<=spacee;j++){
-                System.out.print(" ");
-            }
-            for(int j = 1;j<=i;j++){
-                System.out.print('*');
-            }
-            space = space-2;
-            System.out.println();
-        }
-        for(int i = n;i>=1;i--){
-            for(int j = 1;j<=i;j++){
-                System.out.print('*');
-            }
-            int spacee = 2* (n-i);
-            for(int j = 1;j<=spacee;j++){
-                System.out.print(" ");
-            }
-            for(int j = 1;j<=i;j++){
-                System.out.print('*');
-            }
-            space = space-2;
-            System.out.println();
-        }
-    }    
 
-    public static void diamond(){
-        int a = 4;
-        for(int i = 1;i<=a;i++){
-            for(int j = 1;j<=a-i;j++){
+    public static void butterfly_a() {
+        int n = 4;
+        int space = 0;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+            int spacee = 2 * (n - i);
+            for (int j = 1; j <= spacee; j++) {
                 System.out.print(" ");
             }
-            
-            for(int j = 1;j<=2*i-1;j++){
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+            space = space - 2;
+            System.out.println();
+        }
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+            int spacee = 2 * (n - i);
+            for (int j = 1; j <= spacee; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print('*');
+            }
+            space = space - 2;
+            System.out.println();
+        }
+    }
+
+    public static void diamond() {
+        int a = 4;
+        for (int i = 1; i <= a; i++) {
+            for (int j = 1; j <= a - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
+
     }
 
-    public static void crossbox(){
+    public static void crossbox() {
         int n = 7;
-        for(int i = 1;i<=n;i++){
-            for(int j = 1;j<=n;j++){
-                if (i==1||i==n||j==1||j==n||i==j||i+j==n+1) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n || i == j || i + j == n + 1) {
                     System.out.print("*");
-                
-            }else{
-                System.out.print(" ");
+
+                } else {
+                    System.out.print(" ");
+                }
             }
-            
+            System.out.println();
         }
-        System.out.println();
-    }
     }
 
-    public static void anonNum(){
+    public static void anonNum() {
         int n = 5;
-        for(int i = 1;i<=n;i++){
+        for (int i = 1; i <= n; i++) {
             int count = i;
-            for(int j = 1;j<=i;j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print(count);
                 count++;
             }

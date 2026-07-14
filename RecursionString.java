@@ -1,10 +1,11 @@
 public class RecursionString {
     public static void main(String[] args) {
-        String s = "ayushapplayushraj";
+        String s = "I am apple";
         String ans = "";
-        System.out.println(charRemoving(s, ans, 0));
-        System.out.println(appleRemoving(s, ans, 0));
-        System.out.println(skipAppnotApple(s));
+//        System.out.println(charRemoving(s, ans, 0));
+//        System.out.println(appleRemoving(s, ans, 0));
+//        System.out.println(skipAppnotApple(s));
+        System.out.println(skipAppnotApple2(s,ans,0));
         // System.out.println(makeFancyString(s));
     }
     public static String charRemoving(String original , String ans , int i) {
@@ -20,16 +21,17 @@ public class RecursionString {
 
    public static String appleRemoving(String original, String ans, int i) {
     if (i == original.length()) {
-        return ans;
+        return ans; // I am apple kumari
     }
 
-    if (i + 5 <= original.length() && original.startsWith("apple", i)) {
+    if (original.startsWith("apple", i)) {
         return appleRemoving(original, ans, i + 5);
     } else {
         return appleRemoving(original, ans + original.charAt(i), i + 1);
     }
 }
-    public static String skipAppnotApple(String original){
+
+    public static String skipAppnotApple(String original){ // This method is less optimized than skipAppnotApple2 , this uses more space becuase it creates subStrings
         if (original.isEmpty()) {
             return "";
         }
@@ -37,6 +39,17 @@ public class RecursionString {
             return skipAppnotApple(original.substring(3));
         }else{
             return original.charAt(0) + skipAppnotApple(original.substring(1));
+        }
+    }
+
+    public static String skipAppnotApple2(String original,String ans,int i){ // This method is more optimized because it is not creating substring at every recursion call
+        if (i==original.length()) {
+            return ans;
+        }
+        if (!original.startsWith("apple",i) && original.startsWith("app",i)) {
+            return skipAppnotApple2(original,ans,i+3);
+        }else{
+            return skipAppnotApple2(original,ans + original.charAt(i),i+1);
         }
     }
     

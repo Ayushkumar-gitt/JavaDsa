@@ -1,6 +1,6 @@
 public class PowerOfTwo {
     public static void main(String[] args) {
-        powerOfTwo(15);
+        System.out.println(powerOfTwo(17));
     }
     public static boolean powerOfTwo(int n) {
         if (n<=0) { // less than equal to zero because then it will also check for negative numbers.
