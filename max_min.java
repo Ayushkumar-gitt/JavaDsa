@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class max_min {
     public static void main(String[] args) {
-        // max();
+        max();
         min();
     }
     public static void max(){
