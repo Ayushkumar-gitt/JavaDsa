@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class BuyandSellStock {
-    public static void main() {
+    public static void main(String[] args) {
         int[] prices = {5, 1, 2, 3, 0, 4};
         System.out.println(maxProfit(prices));
     }

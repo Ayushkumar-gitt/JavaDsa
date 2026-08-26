@@ -4,8 +4,9 @@ import java.util.stream.Collectors;
 
 public class Permutations {
     public static void main(String[] args) {
-        int[] arr  = {1,1,2};
-        List<List<Integer>> finalAns = permuteUnique(arr);
+        int[] arr  = {1,2,3};
+        List<List<Integer>> finalAns = permute(arr);
+
         for (int i = 0; i < finalAns.size(); i++) {
             System.out.println(finalAns.get(i));
         }
