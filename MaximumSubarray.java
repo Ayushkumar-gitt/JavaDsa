@@ -4,8 +4,8 @@ public class MaximumSubarray {
     public static void main(String[] args) {
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
         String s = "pwwkew";
-        System.out.println(maxSubArray2(nums));
-//        System.out.println(lengthOfLongestSubstring(s));
+//        System.out.println(maxSubArray2(nums));
+        System.out.println(lengthOfLongestSubstring(s));
 
     }
 
@@ -42,7 +42,6 @@ public class MaximumSubarray {
             if (sum<0){
                 sum = 0;
             }
-
         }
         return ans;
     }

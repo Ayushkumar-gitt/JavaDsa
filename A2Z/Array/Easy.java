@@ -17,8 +17,8 @@ public class Easy {
     }
 
     public static int secondLargestElement(int[] nums) {
-        int largest = -1;
-        int secondLargest = -1;
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > largest) {
                 secondLargest = largest;
