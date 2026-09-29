@@ -4,19 +4,23 @@ public class Intro {
 
     public static void main(String[] args) {
         Intro list = new Intro();
-        list.insertFirst(9);
-        list.insertFirst(7);
-        list.insertFirst(6);
+        list.insertFirst(3);
+        list.insertFirst(3);
+        list.insertFirst(2);
         list.insertFirst(1);
-        list.insertLast(45);
-        list.insert(3,12);
-        list.deleteFirst();
-        list.deleteLast();
-        list.delete(2);
-        list.display();
+//        list.insertLast(7);
+//        list.insert(3,12);
+//        list.deleteFirst();
+//        list.deleteLast();
+//        list.delete(2);
+//        list.display();
+//        list.deleteDuplicates();
+//        list.display();
+//        System.out.println(list.lengthCycle());
+
     }
-    private Node head;
-    private Node tail;
+     Node head;
+     Node tail;
     private  int size;
     public Intro(){
         this.size = 0;
@@ -109,6 +113,94 @@ public class Intro {
             temp = temp.next;
         }
         System.out.println("END");
+    }
+    // Questions
+
+    public void deleteDuplicates() {
+        Node temp1 = head;
+        Node temp2 = head;
+
+        while (temp2 !=null){
+            if (temp1.value==temp2.value){
+                temp2 = temp2.next;
+            }else{
+                temp1.next = temp2;
+                temp1 = temp2;
+                temp2 = temp2.next;
+            }
+        }
+        temp1.next = null;
+    }
+
+    public Node mergeTwoLists(Node list1, Node list2){
+        Node head1 = list1;
+        Node head2 = list2;
+        Intro ans = new Intro();
+        while (head1 != null && head2!=null){
+            if (head1.value<=head2.value){
+                ans.insertLast(head1.value);
+                head1 = head1.next;
+            } else {
+                ans.insertLast(head2.value);
+                head2 = head2.next;
+            }
+        }
+        while (head1!=null){
+            ans.insertLast(head1.value);
+            head1 = head1.next;
+        }
+        while (head2!=null){
+            ans.insertLast(head2.value);
+            head2 = head2.next;
+        }
+        return ans.head;
+    }
+
+    public boolean hasCycle(Node head) {
+        Node f = head;
+        Node s = head;
+
+        while (f != null && f.next != null){
+            f = f.next.next;
+            s = s.next;
+            if (f==s){
+                return true;
+            }
+        }
+        return false;
+    }
+    public int lengthCycle(Node head){
+        Node fast = head;
+        Node slow = head;
+//        int count = 0;
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast==slow){
+                int count = 1;
+                slow = slow.next;
+                while (slow!=fast){
+                    slow = slow.next;
+                    count++;
+                }
+                return count;
+            }
+        }
+        return 0;
+    }
+
+    public Node detectCycle(Node head) {
+        int cycleLength = lengthCycle(head);
+        Node s = head;
+        Node f = head;
+        for (int i = 0; i < cycleLength; i++) {
+            s = s.next;
+        }
+        while (s!=f){
+            s = s.next;
+            f = f.next;
+        }
+        return s;
     }
 
     static class Node{

@@ -1,13 +1,15 @@
 package A2Z.String;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
+
+import static java.lang.reflect.Array.get;
 
 public class Medium {
     public static void main(String[] args) {
 //        System.out.println(frequencySort("babad"));
-        System.out.println(longestPalindrome("cbbd"));
+//        System.out.println(longestPalindrome("cbbd"));
+        System.out.println(beautySum("aabcb"));;
     }
 
     public static String frequencySort(String s) {
@@ -44,6 +46,29 @@ public class Medium {
             i--;
             j++;
         }
-        return s.substring(i+1,j);
+        return s.substring(i + 1, j);
+    }
+
+    public static int beautySum(String s) {
+        int beautySum = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            HashMap<Character, Integer> map = new HashMap<>();
+
+            for (int j = i; j < s.length(); j++) {
+                char ch = s.charAt(j);
+                if(map.containsKey(ch)){
+                    map.put(ch,map.get(ch)+1);
+                }else{
+                    map.put(ch,1);
+                }
+
+                int max = Collections.max(map.values());
+                int min = Collections.min(map.values());
+
+                beautySum += max - min;
+            }
+        }
+        return beautySum;
     }
 }

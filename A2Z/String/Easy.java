@@ -1,6 +1,9 @@
 package A2Z.String;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.Stack;
 
 public class Easy {
     public static void main(String[] args) {
@@ -88,5 +91,18 @@ public class Easy {
         }
 
         return (s + s).contains(goal);
+    }
+    public static int maxDepth(String s) {
+        int count = 0;
+        int ans = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i)=='(') count++;
+            if (s.charAt(i)==')') count--;
+
+            if (count>ans){
+                ans = count;
+            }
+        }
+        return ans;
     }
 }

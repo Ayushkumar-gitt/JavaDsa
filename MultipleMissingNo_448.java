@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MultipleMissingNo_448 {
     public static void main(String[] args) {
-        int arr[] = { 4, 3, 2, 7, 8, 2, 3, 1 };
+        int arr[] = {1,2,3,6,7,7,5};
         List<Integer> ans = findDisappearedNumbers(arr);
         for (Integer val : ans) {
             System.out.print(val + " ");

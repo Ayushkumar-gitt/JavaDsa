@@ -7,20 +7,6 @@ public class CyclicSort {
         int arr[] = { 2, 4, 3, 1, 5 };
         int i = 0;
 
-        // while (i <= arr.length - 1) {
-        // int index = arr[i] - 1;
-        // if (arr[i] != i + 1) { // swap it with arr[i]-1 th element
-        // int temp = arr[i];
-        // arr[i] = arr[index];
-        // arr[index] = temp;
-        // }else{
-        // i++;
-        // }
-        // // if (arr[i] == i + 1) {
-        // // i++;
-        // // }
-        // }
-
         while (i <= arr.length - 1) {
             int correctIndex = arr[i] - 1;
             if (arr[i] == i + 1) {

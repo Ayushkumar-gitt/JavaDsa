@@ -6,7 +6,7 @@ public class RecursionSubsequences {
     public static void main(String[] args) {
 //         subsequences("", "123");
 //         subsets_leetcode90("","122");
-//        System.out.println(subsequencesList("", "123"));
+        System.out.println(subsequencesList("", "aabcb"));
 //        System.out.println(isSubsequence("axc", "abcde"));
 //        String[] words = {"a","bb","acd","ace"};
 //        numMatchingSubseq("abcde",words );
