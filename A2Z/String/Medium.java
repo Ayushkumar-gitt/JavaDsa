@@ -9,7 +9,8 @@ public class Medium {
     public static void main(String[] args) {
 //        System.out.println(frequencySort("babad"));
 //        System.out.println(longestPalindrome("cbbd"));
-        System.out.println(beautySum("aabcb"));;
+//        System.out.println(beautySum("aabcb"));;
+        System.out.println(minAddToMakeValid("())"));
     }
 
     public static String frequencySort(String s) {
@@ -70,5 +71,23 @@ public class Medium {
             }
         }
         return beautySum;
+    }
+
+    public static int minAddToMakeValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for(int i = 0;i<s.length();i++){
+            char word = s.charAt(i);
+            if (word==')'){
+                if (!stack.isEmpty() && stack.peek()=='('){
+                    stack.pop();
+                }else{
+                    stack.add(word);
+                }
+            }else{
+                stack.add(word);
+            }
+        }
+        return stack.size();
     }
 }
