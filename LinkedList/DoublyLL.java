@@ -24,7 +24,6 @@ public class DoublyLL {
         newNode.next = head;
         if (head!=null) head.prev = newNode;
         head = newNode;
-
     }
     public void insertLast(int val){
         Node newNode = new Node(val);

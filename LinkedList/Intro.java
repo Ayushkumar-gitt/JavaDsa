@@ -68,6 +68,9 @@ public class Intro {
     }
 
     public void deleteFirst(){
+        if(head==null){
+            return;
+        }
         Node temp = head;
         head = temp.next;
         temp.next = null;
@@ -81,6 +84,7 @@ public class Intro {
     public void deleteLast(){
         if(size<=1){
             deleteFirst();
+            return;
         }
         
         Node temp = head;
@@ -88,21 +92,22 @@ public class Intro {
             temp = temp.next;
         }
         tail = temp.next;
-        temp.next = null;
+        tail.next = null;
+        size--;
     }
 
     public void delete(int index){
-        if (index ==0){
+        if (index == 0){
             deleteFirst();
         }
         if (index==size-1){
             deleteLast();
         }
-        Node prev = head;
+        Node temp = head;
         for (int i = 1; i < index; i++) {
-            prev = prev.next;
+            temp = temp.next;
         }
-        prev.next = prev.next.next;
+        temp.next = temp.next.next;
         size--;
     }
 
